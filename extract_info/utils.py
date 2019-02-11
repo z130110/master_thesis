@@ -177,20 +177,11 @@ class logger(object):
             temp_p10_arr = np.array(res_tem["p10_num_seed:" + str(seed)])
 
             local_max_index = temp_p10_arr.argmax()          
-            #local_min_index = temp_p10_arr.argmin()
 
-            # print(temp_p1_arr)
-            # print(temp_p5_arr)
-            # print(temp_p10_arr)
-            # print("========================")
             p1_max.append(temp_p1_arr[local_max_index])
             p5_max.append(temp_p5_arr[local_max_index])
             p10_max.append(temp_p10_arr[local_max_index])
-
-            #p1_min.append(temp_p1_arr[local_min_index])
-            #p5_min.append(temp_p5_arr[local_min_index])
-            #p10_min.append(temp_p10_arr[local_min_index])
-
+            
         global_max_index = np.array(p10_max).argmax()
         global_min_index = np.array(p10_max).argmin()
 
@@ -464,33 +455,5 @@ def multi_run_std(list_log):
     return res
 
 
-
-
-
-
-
-
-
-    # def plot_loss(self, title_dic, save_path, save_or_not = False):
-    #     d_x_indexer = np.arange(1, self.d_loss_array.shape[0] + 1)
-    #     g_x_indexer = np.arange(1, self.g_loss_array.shape[0] + 1)
-    #     fig = plt.figure()
-    #     fig.suptitle(title_dic["title_all"], fontsize= 12)
-    #     plt.subplot(211)
-    #     plt.plot(d_x_indexer, self.d_loss_array, color = "red")
-    #     ax1.set_xticks([1,2000,4000,10000])
-    #     plt.grid()
-    #     plt.title(title_dic["subtitle_d"])
-    #     plt.subplot(212)
-    #     plt.tight_layout()
-    #     plt.plot(g_x_indexer, self.g_loss_array, color = "green")
-    #     plt.grid()
-    #     plt.title(title_dic["subtitle_g"])
-    #     fig.tight_layout()
-    #     fig.subplots_adjust(top=0.85)
-    #     if save_or_not == True:
-    #         #print(save_path)
-    #         plt.savefig(save_path, dpi=600)
-    #     plt.show()
 
 
