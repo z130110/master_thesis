@@ -170,7 +170,6 @@ class logger(object):
                     res_tem[res_key_p10].append(csls_value)
                 counter_csls += 1
 
-        #print(seed_list)
         for seed in seed_list:
             temp_p1_arr = np.array(res_tem["p1_num_seed:" + str(seed)])
             temp_p5_arr = np.array(res_tem["p5_num_seed:" + str(seed)])
@@ -266,8 +265,6 @@ class logger(object):
         fig, (ax1, ax2) = plt.subplots(2,1, figsize=(9,5))
         fig.suptitle(title_dic["title_all"], fontsize= 12)
         ax1.plot(d_x_indexer, self.d_loss_array, color = "red")
-        #ax1.set_xticks(d_x_indexer[::248*4])
-        #ax1.set_xticklabels(label_indexer_d, rotation=45)
         ax1.grid(linestyle='dotted')
         ax1.set_title(title_dic["subtitle_d"])
         plt.tight_layout()
@@ -275,8 +272,6 @@ class logger(object):
         ax2.plot(g_x_indexer, self.g_loss_array, color = "green")
         ax2.grid(linestyle='dotted')
         ax2.set_title(title_dic["subtitle_g"])
-        #ax2.set_xticks(g_x_indexer[::248*4])
-        #ax2.set_xticklabels(label_indexer_g, rotation=45)
         fig.tight_layout()
         fig.subplots_adjust(top=0.85)
         if save_or_not == True and isinstance(save_path, str):
