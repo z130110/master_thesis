@@ -429,26 +429,9 @@ class logger(object):
                 del nn_10_list[:]
                 del cosine_nn_list[:]
                 del cosine_csls_list[:]        
-        #return knn_n_to_precision
 
-def multi_run_std(list_log):
-    # input: a list of logger for different seeds
-    num_log = len(list_log)
-    p5_li = np.array([])
-    p10_li = np.array([])
-    res = {}
-    for i in range(num_log):
-        p5_val = list_log["opt_csls@5"]
-        p10_val = list_log["opt_csls@10"]
-        p5_li = np.append(p5_li, p5_val) 
-        p10_li = np.append(p10_li, p10_val)
 
-    res["mean_p5"] = p5_li.mean()
-    res["mean_p10"] = p10_li.mean()
-    res["std_p5"] = p5_li.std()
-    res["std_p10"] = p10_li.std()
-    return res
-
+        
 
 
 
